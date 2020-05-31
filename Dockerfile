@@ -1,4 +1,4 @@
-FROM docker/compose:alpine-1.25.5
+FROM docker/compose:latest
 WORKDIR /app 
 
 ADD . .

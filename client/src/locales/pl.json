@@ -1,0 +1,58 @@
+{
+  "landingHeader": {
+    "button": "Sprawdź",
+    "subtitle": "Sprawdź wszystkie narzędzia, o których nie miałeś pojęcia",
+    "titlecolor": "najnowsze wersje",
+    "titleend": "swojego ulubionego narzędzia",
+    "titlestart": "Serwis na którym znajdziesz"
+  },
+  "landingContent": {
+    "contentChoose": {
+      "title": "Wybierz swoją ścieżkę",
+      "subtitle": "Jesteśmy tu dla Ciebie abyś mógł być na bieżąco z najnowszymi narzędziami.",
+      "subtitle2": "Jedynie czego potrzebujemy to abyś wybrał drogę w której czujesz się najlepiej",
+      "lastUpdated": "Ostatnio zaktualizowane",
+      "mostStars": "Najbardziej lubiane",
+      "mostDownloads": "Najwięcej pobrań"
+    },
+    "popularTech": {
+      "title": "Znajdź najbardziej popularne technologie na świecie",
+      "subtitle": "Sprawdź co jest napotężniejsze w każdej z dziedzin programowania",
+      "toolCounter": "Narzędzia: ",
+      "frontend": {
+        "javascriptDesc": "JavaScript jest skryptowym językiem programowania, stworzonym w latach 90-tych przez Brendana Eicha i firmę Netscape. Jest to język wykorzystywany na stronach WWW. Same skrypty odpowiadają za interaktywność poprzez reagowanie na zdarzenia, sprawdzanie formularzy czy za tworzenie elementów służących do nawigacji."
+      }
+    },
+    "contactForm": {
+      "title": "Chciałbyś nam coś powiedzieć?",
+      "subTitle": "Wyślij nam swoje pomysły i opinie!",
+      "nameForm": "Imię",
+      "titleForm": "Tytuł",
+      "messageForm": "Wiadomość"
+    }
+  },
+  "addTool-page": {
+    "button": "Dodaj repozytorium",
+    "logoTitle": "Dostępne logotypy",
+    "repoSearchLabel": "Nazwa repozytorium"
+  },
+  "error-page": {
+    "errorSubTitle": "Strony nie znaleziono",
+    "errorAction": "Przepraszamy, strona której szukasz nie istnieje w naszej bazie danych! Kliknij przycisk i wróć do naszej strony głównej",
+    "button": "Powrót"
+  },
+  "development": {
+    "frontend": {
+      "title": "Co to jest?",
+      "titleContent": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio consequatur reprehenderit non provident aperiam similique quibusdam cumque id perspiciatis ratione obcaecati ipsum fuga minus ad, eius velit neque molestias nulla nostrum corporis voluptatum. Praesentium facere eveniet sequi odit dignissimos saepe temporibus dicta cum soluta est. Accusantium, esse ad? Nobis, aliquid.",
+      "popular-technology": {
+        "title": "Najpopularniejsze technologie"
+      }
+    }
+  },
+  "menu#1": "Strona Główna",
+  "menu#2": "O Nas",
+  "menu#3": "Kontakt",
+  "menu#4": "Wesprzyj Nas",
+  "buttonCheck": "Sprawdź"
+}

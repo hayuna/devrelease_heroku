@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM docker/compose:alpine-1.25.5
 WORKDIR /app 
 
 ADD . .

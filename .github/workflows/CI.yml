@@ -23,7 +23,7 @@ jobs:
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       run: |
-        heroku container:push server client -a ${{ secrets.HEROKU_APP_NAME }} web 
+        heroku container:push client -a ${{ secrets.HEROKU_APP_NAME }} web 
     - name: Release
       env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}

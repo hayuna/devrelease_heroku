@@ -1,5 +1,10 @@
 {
     "scripts": {
-      "prod": "docker-compose up -d --build"
+      "install:client": "cd client && npm i",
+      "install:server": "cd server && npm i",
+      "install:all": "cd client && npm i && cd ../server && npm i && cd ../",
+      "docker-compose:restart": "docker-compose down -v && docker-compose up --build -d",
+      "docker-compose:start": "docker-compose up --build -d",
+      "docker-compose:stop": "docker-compose down -v"
     }
   }

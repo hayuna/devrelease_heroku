@@ -20,6 +20,5 @@ jobs:
         script: |
           cd /home/live-sharing
           git pull origin master
-          npm i
-          docker-compose down -v
-          docker-compose up --build -d
+          npm run install:all
+          npm run docker-compose:restart

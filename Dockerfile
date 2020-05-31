@@ -1,4 +1,4 @@
-FROM docker/compose:latest
+FROM tiangolo/docker-with-compose:latest
 WORKDIR /app 
 
 ADD . .

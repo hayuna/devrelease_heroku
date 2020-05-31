@@ -1,8 +1,5 @@
-FROM tiangolo/docker-with-compose:latest
+FROM node:6.7.0
 WORKDIR /app 
 
 ADD . .
-RUN /etc/init.d/docker status
-RUN docker ps
-RUN docker-compose -v
-RUN docker-compose up -d --build
+

@@ -3,26 +3,26 @@ services:
   server:
     build:
       context: ./server
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     command: node src/server.js
-    container_name: PROD_api
+    container_name: DEV_api
     environment:
       - PORT=4000
       - VIRTUAL_HOST=2000
     ports:
-      - 4000:4000
+      - 4001:4000
     restart: always
     volumes:
       - ./server/src:/app/server/src
   client:
     build:
       context: ./client
-      dockerfile: Dockerfile
-    container_name: PROD_client
+      dockerfile: Dockerfile.dev
+    container_name: DEV_client
     links:
       - server
     ports:
-      - 80:80
+      - 81:80
     restart: always
     volumes:
       - ./server/logos:/usr/share/nginx/html/logos

@@ -23,7 +23,6 @@ services:
       - server
     ports:
       - 80:80
-      - 443:443
     restart: always
     volumes:
       - ./server/logos:/usr/share/nginx/html/logos

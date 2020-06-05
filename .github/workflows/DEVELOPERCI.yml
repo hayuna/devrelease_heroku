@@ -27,4 +27,4 @@ jobs:
           git checkout developer
           git pull origin developer
           npm run install:all
-          npm run docker-compose:dev:restart
+          npm run docker-compose:dev:diff

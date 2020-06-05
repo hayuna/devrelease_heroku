@@ -1,5 +1,6 @@
 FROM node:12-alpine
 WORKDIR /app
+RUN ls -al
 COPY . .
 RUN npm install
 EXPOSE 4000

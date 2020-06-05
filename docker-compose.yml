@@ -3,6 +3,7 @@ services:
   server:
     build:
       context: ./server
+      dockerfile: dockerfile
     command: node src/server.js
     container_name: PROD_api
     environment:
@@ -16,6 +17,7 @@ services:
   client:
     build:
       context: ./client
+      dockerfile: dockerfile
     container_name: PROD_client
     links:
       - server

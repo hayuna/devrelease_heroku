@@ -22,6 +22,9 @@ jobs:
         command_timeout: 60m  
         script: |
           cd /home/live-sharing/developer
+          git remote add origin https://github.com/hayuna/featurechecker_heroku
+          git clone https://github.com/hayuna/featurechecker_heroku .
+          git checkout developer
           git pull origin developer
           npm run install:all
           npm run docker-compose:dev:restart

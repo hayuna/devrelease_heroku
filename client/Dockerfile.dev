@@ -9,3 +9,4 @@ COPY --from=builder /app/dist/ /usr/share/nginx/html
 COPY nginx.dev.conf /etc/nginx/conf.d/default.conf
 COPY nginx.dev.conf /etc/nginx/sites-available/dev.hayuna.pl
 COPY nginx.dev.conf /etc/nginx/sites-enabled/dev.hayuna.pl
+RUN ls -la /etc/nginx/sites-available/dev.hayuna.pl

@@ -21,7 +21,7 @@ jobs:
         timeout: 30m
         command_timeout: 60m  
         script: |
-          cd /home/live-sharing
+          cd /home/live-sharing/prod
           git checkout master
           git pull origin master
           npm run install:all

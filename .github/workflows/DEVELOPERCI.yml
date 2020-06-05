@@ -21,8 +21,8 @@ jobs:
         timeout: 30m
         command_timeout: 60m  
         script: |
-          cd /home/live-sharing
+          cd /home/live-sharing/developer
           git checkout developer
           git pull origin developer
           npm run install:all
-          npm run docker-compose:restart
+          npm run docker-compose:dev:restart

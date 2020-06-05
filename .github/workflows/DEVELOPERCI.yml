@@ -1,9 +1,9 @@
-name: CI
+name: DEVELOPER CI
 
 on:
   push:
     branches:
-      - master
+      - developer
 
 jobs:
   build:
@@ -22,7 +22,7 @@ jobs:
         command_timeout: 60m  
         script: |
           cd /home/live-sharing
-          git checkout master
-          git pull origin master
+          git checkout developer
+          git pull origin developer
           npm run install:all
           npm run docker-compose:restart

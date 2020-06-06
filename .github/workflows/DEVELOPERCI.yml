@@ -26,4 +26,4 @@ jobs:
           git clone https://github.com/hayuna/devrelease_heroku .
           git checkout developer
           git pull origin developer
-          npm run docker-compose:dev:diff
+          npm run docker-compose:dev:restart

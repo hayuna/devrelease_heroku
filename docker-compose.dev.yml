@@ -6,14 +6,12 @@ services:
       dockerfile: Dockerfile.dev
     command: node src/server.js
     container_name: DEV_api
-    environment:
-      - PORT=4000
-      - VIRTUAL_HOST=2000
     ports:
       - 4001:4000
     restart: always
     volumes:
       - ./server/src:/app/server/src
+      - /var/run/docker.sock:/tmp/docker.sock:ro
   client:
     build:
       context: ./client
@@ -23,6 +21,9 @@ services:
       - server
     ports:
       - 81:80
+    environment:
+      - VIRTUAL_HOST=2000
     restart: always
     volumes:
       - ./server/logos:/usr/share/nginx/html/logos
+      - /var/run/docker.sock:/tmp/docker.sock:ro

@@ -6,11 +6,6 @@ services:
       dockerfile: Dockerfile
     command: node src/server.js
     container_name: PROD_api
-    environment:
-      - PORT=4000
-      - VIRTUAL_HOST=2000
-    ports:
-      - 4000:4000
     restart: always
     volumes:
       - ./server/src:/app/server/src

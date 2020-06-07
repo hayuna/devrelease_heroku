@@ -8,4 +8,4 @@ FROM nginx:1.18.0-alpine
 RUN mkdir -p /usr/share/nginx/html/dev.hayuna.pl
 COPY --from=builder /app/dist/ /usr/share/nginx/html/dev.hayuna.pl
 COPY nginx.dev.conf /etc/nginx/sites-available/dev.hayuna.pl
-RUN ln -s /etc/nginx/sites-available/dev.hayuna.pl /etc/nginx/sites-enabled/
+#RUN ln -s /etc/nginx/sites-available/dev.hayuna.pl /etc/nginx/sites-enabled/

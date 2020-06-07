@@ -21,6 +21,7 @@ jobs:
         timeout: 30m
         command_timeout: 60m  
         script: |
+          mkdir -p /home/live-sharing/test
           cd /home/live-sharing/test
           git remote add origin https://github.com/hayuna/devrelease_heroku
           git clone https://github.com/hayuna/devrelease_heroku .

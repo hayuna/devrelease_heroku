@@ -7,10 +7,10 @@ services:
     command: node src/server.js
     container_name: DEV_api
     ports:
-      - 4001:4000
+      - 4000:4000
     restart: always
     volumes:
-      - ./server/src:/app/server/src
+      - ./server:/app/server
       - /var/run/docker.sock:/tmp/docker.sock:ro
   client:
     build:
@@ -20,10 +20,9 @@ services:
     links:
       - server
     ports:
-      - 81:80
-    environment:
-      - VIRTUAL_HOST=2000
+      - 80:80
     restart: always
     volumes:
       - ./server/logos:/usr/share/nginx/html/logos
+      - ./client:/app/client
       - /var/run/docker.sock:/tmp/docker.sock:ro

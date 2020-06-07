@@ -1,23 +1,10 @@
 version: "3"
 services:
-  server:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
-    command: node src/server.js
-    container_name: PROD_api
-    restart: always
-    volumes:
-      - ./server/src:/app/server/src
   client:
     build:
       context: ./client
       dockerfile: Dockerfile
-    container_name: PROD_client
-    links:
-      - server
+    container_name: TEST_client
     ports:
       - 80:80
     restart: always
-    volumes:
-      - ./server/logos:/usr/share/nginx/html/logos

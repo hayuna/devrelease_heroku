@@ -1,14 +1,8 @@
 {
     "scripts": {
-      "install:client": "cd client && npm i",
-      "install:server": "cd server && npm i",
-      "install:all": "cd client && npm i && cd ../server && npm i && cd ../",
-      "docker-compose:restart": "docker-compose down -v && docker-compose up --build -d",
-      "docker-compose:start": "docker-compose up --build -d",
-      "docker-compose:stop": "docker-compose down -v",
-      "docker-compose:dev:restart": "docker-compose -f docker-compose.dev.yml down && docker-compose -f docker-compose.dev.yml up --build -d",
-      "docker-compose:dev:start": "docker-compose -f docker-compose.dev.yml up --build -d",
-      "docker-compose:dev:stop": "docker-compose -f docker-compose.dev.yml down",
-      "docker-compose:dev:diff": "docker-compose -f docker-compose.dev.yml up -d"
+      "docker-compose:dev:restart": "docker-compose down && docker-compose up --build -d",
+      "docker-compose:dev:start": "docker-compose up --build -d",
+      "docker-compose:dev:stop": "docker-compose down",
+      "docker-compose:dev:diff": "docker-compose up -d"
     }
   }

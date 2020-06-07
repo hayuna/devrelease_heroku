@@ -1,4 +1,4 @@
-FROM nginx:1.18.0-alpine
+FROM nginx:latest
 RUN mkdir -p /usr/share/nginx/html/test.hayuna.pl
 RUN mkdir -p /etc/nginx/sites-enabled/
 COPY . /usr/share/nginx/html/test.hayuna.pl

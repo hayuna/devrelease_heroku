@@ -5,6 +5,6 @@
       "install:all": "cd client && npm i && cd ../server && npm i && cd ../",
       "docker-compose:restart": "docker-compose down -v && docker-compose up --build -d",
       "docker-compose:start": "docker-compose up --build -d",
-      "docker-compose:stop": "docker-compose down -v",
+      "docker-compose:stop": "docker-compose down -v"
     }
   }

@@ -19,30 +19,32 @@ jobs:
         timeout: 30m
         command_timeout: 60m  
         script: |
-          echo ${{github}}
-          echo ${{github.event}}
-          echo ${{github.event_path}}
-          echo ${{github.workflow}}
-          echo ${{github.job}}
-          echo ${{github.run_id}}
-          echo ${{github.run_number}}
-          echo ${{github.actor}}
-          echo ${{github.repository}}
-          echo ${{github.repository_owner}}
-          echo ${{github.event_name}}
-          echo ${{github.sha}}
-          echo ${{github.ref}}
-          echo ${{github.head_ref}}
-          echo ${{github.base_ref}}
-          echo ${{github.token}}
-          echo ${{github.workspace}}
-          echo ${{github.action}}
-        #   mkdir -p /home/live-sharing/developer${{GITHUB_RUN_NUMBER+200}}
-        #   cd /home/live-sharing/developer${{GITHUB_RUN_NUMBER+200}}
+            echo $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
+
+          echo ${{github}} #Object
+          echo ${{github.event}} #Object
+          echo ${{github.event_path}} #/home/runner/work/_temp/_github_workflow/event.json
+          echo ${{github.workflow}} #CI
+          echo ${{github.job}} #build
+          echo ${{github.run_id}} #134976***5
+          echo ${{github.run_number}} #3
+          echo ${{github.actor}} #hayuna
+          echo ${{github.repository}} #hayuna/devrelease_heroku
+          echo ${{github.repository_owner}} #hayuna
+          echo ${{github.event_name}} #pull_request
+          echo ${{github.sha}} #16d0568d037d56a6a982ac42ed82fec776021218
+          echo ${{github.ref}} #refs/pull/1/merge
+          echo ${{github.head_ref}} #newBranch
+          echo ${{github.base_ref}} #master
+          echo ${{github.token}} #***
+          echo ${{github.workspace}} #/home/runner/work/devrelease_heroku/devrelease_heroku
+          echo ${{github.action}} #appleboyssh-action
+        #   mkdir -p /home/live-sharing/${{github.head_ref}}
+        #   cd /home/live-sharing/${{github.head_ref}}
         #   git remote add origin https://github.com/hayuna/devrelease_heroku
         #   git clone https://github.com/hayuna/devrelease_heroku .
-        #   git checkout master
-        #   git pull origin master
+        #   git checkout ${{github.head_ref}}
+        #   git pull origin ${{github.head_ref}}
         #   npm run install:all
         #   docker-compose down -v
         #   echo "PORT=${{GITHUB_RUN_NUMBER+200}}" >> "./.env"

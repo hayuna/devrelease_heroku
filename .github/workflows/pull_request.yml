@@ -19,13 +19,15 @@ jobs:
         timeout: 30m
         command_timeout: 60m  
         script: |
-          mkdir -p /home/live-sharing/developer${{GITHUB_RUN_NUMBER+200}}
-          cd /home/live-sharing/developer${{GITHUB_RUN_NUMBER+200}}
-          git remote add origin https://github.com/hayuna/devrelease_heroku
-          git clone https://github.com/hayuna/devrelease_heroku .
-          git checkout master
-          git pull origin master
-          npm run install:all
-          docker-compose down -v
-          echo "PORT=${{GITHUB_RUN_NUMBER+200}}" >> "./.env"
-          docker-compose up --build -d
+          echo ${{GITHUB_RUN_NUMBER}}
+          echo ${{GITHUB_RUN_NUMBER+200}}
+        #   mkdir -p /home/live-sharing/developer${{GITHUB_RUN_NUMBER+200}}
+        #   cd /home/live-sharing/developer${{GITHUB_RUN_NUMBER+200}}
+        #   git remote add origin https://github.com/hayuna/devrelease_heroku
+        #   git clone https://github.com/hayuna/devrelease_heroku .
+        #   git checkout master
+        #   git pull origin master
+        #   npm run install:all
+        #   docker-compose down -v
+        #   echo "PORT=${{GITHUB_RUN_NUMBER+200}}" >> "./.env"
+        #   docker-compose up --build -d

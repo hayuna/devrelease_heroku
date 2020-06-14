@@ -27,4 +27,5 @@ jobs:
           git checkout master
           git pull origin master
           npm run install:all
-          npm run docker-compose:restart
+          docker-compose down -v
+          docker-compose up -e PORT=80 --build -d

@@ -19,32 +19,13 @@ jobs:
         timeout: 30m
         command_timeout: 60m  
         script: |
-            echo ${format('{{10{0}}}', github.event.pull_request.number)}
-            echo ${{github}} #Object
-            echo ${{github.event}} #Object
-            echo ${{github.event_path}} #/home/runner/work/_temp/_github_workflow/event.json
-            echo ${{github.workflow}} #CI
-            echo ${{github.job}} #build
-            echo ${{github.run_id}} #134976***5
-            echo ${{github.run_number}} #3
-            echo ${{github.actor}} #hayuna
-            echo ${{github.repository}} #hayuna/devrelease_heroku
-            echo ${{github.repository_owner}} #hayuna
-            echo ${{github.event_name}} #pull_request
-            echo ${{github.sha}} #16d0568d037d56a6a982ac42ed82fec776021218
-            echo ${{github.ref}} #refs/pull/1/merge
-            echo ${{github.head_ref}} #newBranch
-            echo ${{github.base_ref}} #master
-            echo ${{github.token}} #***
-            echo ${{github.workspace}} #/home/runner/work/devrelease_heroku/devrelease_heroku
-            echo ${{github.action}} #appleboyssh-action
-        #   mkdir -p /home/live-sharing/${{github.head_ref}}
-        #   cd /home/live-sharing/${{github.head_ref}}
-        #   git remote add origin https://github.com/hayuna/devrelease_heroku
-        #   git clone https://github.com/hayuna/devrelease_heroku .
-        #   git checkout ${{github.head_ref}}
-        #   git pull origin ${{github.head_ref}}
-        #   npm run install:all
-        #   docker-compose down -v
-        #   echo "PORT=${{GITHUB_RUN_NUMBER+200}}" >> "./.env"
-        #   docker-compose up --build -d
+          mkdir -p /home/live-sharing/${{github.head_ref}}
+          cd /home/live-sharing/${{github.head_ref}}
+          git remote add origin https://github.com/hayuna/devrelease_heroku
+          git clone https://github.com/hayuna/devrelease_heroku .
+          git checkout ${{github.head_ref}}
+          git pull origin ${{github.head_ref}}
+          npm run install:all
+          docker-compose down -v
+          echo "PORT=10${{github.event.pull_request.number}}" >> "./.env"
+          docker-compose up --build -d

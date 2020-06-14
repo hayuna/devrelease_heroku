@@ -1,13 +1,12 @@
-name: CI
+name: CI/CD Pull Request
 
 on:
   pull_request
   
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - uses: appleboy/ssh-action@master
@@ -30,7 +29,7 @@ jobs:
           echo "PORT=100${{github.event.pull_request.number}}" >> "./.env"
           docker-compose up --build -d
     - name: update-pull-request
-        uses: kt3k/update-pr-description@v1.0.0
+      uses: kt3k/update-pr-description@v1.0.0
         with:
-            pr_body: ${{ steps.description.outputs.description }} +1
-            github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_body: ${{ steps.description.outputs.description }} +1
+          github_token: ${{ secrets.GH_PAT }}

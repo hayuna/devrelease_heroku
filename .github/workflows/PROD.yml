@@ -1,15 +1,12 @@
-name: CI
+name: CI/CD PROD
 
 on:
   push:
     branches:
       - master
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v1
     - uses: appleboy/ssh-action@master
@@ -21,11 +18,12 @@ jobs:
         timeout: 30m
         command_timeout: 60m  
         script: |
+          mkdir -p /home/live-sharing/prod
           cd /home/live-sharing/prod
-          git remote add origin https://github.com/hayuna/devrelease_heroku
-          git clone https://github.com/hayuna/devrelease_heroku .
-          git checkout master
-          git pull origin master
+          git remote add origin https://github.com/${{github.repository}}
+          git clone https://github.com/${{github.repository}} .
+          git checkout ${{github.head_ref}}
+          git pull origin ${{github.head_ref}}
           npm run install:all
           docker-compose down -v
           echo "PORT=80" >> "./.env"

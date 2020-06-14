@@ -19,8 +19,24 @@ jobs:
         timeout: 30m
         command_timeout: 60m  
         script: |
-          echo ${{GITHUB_RUN_NUMBER}}
-          echo ${{GITHUB_RUN_NUMBER+200}}
+          echo ${{github}}
+          echo ${{github.event}}
+          echo ${{github.event_path}}
+          echo ${{github.workflow}}
+          echo ${{github.job}}
+          echo ${{github.run_id}}
+          echo ${{github.run_number}}
+          echo ${{github.actor}}
+          echo ${{github.repository}}
+          echo ${{github.repository_owner}}
+          echo ${{github.event_name}}
+          echo ${{github.sha}}
+          echo ${{github.ref}}
+          echo ${{github.head_ref}}
+          echo ${{github.base_ref}}
+          echo ${{github.token}}
+          echo ${{github.workspace}}
+          echo ${{github.action}}
         #   mkdir -p /home/live-sharing/developer${{GITHUB_RUN_NUMBER+200}}
         #   cd /home/live-sharing/developer${{GITHUB_RUN_NUMBER+200}}
         #   git remote add origin https://github.com/hayuna/devrelease_heroku

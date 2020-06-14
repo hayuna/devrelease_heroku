@@ -27,5 +27,5 @@ jobs:
           git pull origin ${{github.head_ref}}
           npm run install:all
           docker-compose down -v
-          echo "PORT=10${{github.event.pull_request.number}}" >> "./.env"
+          echo "PORT=100${{github.event.pull_request.number}}" >> "./.env"
           docker-compose up --build -d

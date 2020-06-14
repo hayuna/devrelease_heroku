@@ -28,4 +28,5 @@ jobs:
           git pull origin master
           npm run install:all
           docker-compose down -v
-          docker-compose up -e PORT=80 --build -d
+          echo "PORT=80" >> "./.env"
+          docker-compose up --build -d

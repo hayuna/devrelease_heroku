@@ -21,11 +21,16 @@ jobs:
         script: |
           mkdir -p /home/live-sharing/${{github.head_ref}}
           cd /home/live-sharing/${{github.head_ref}}
-          git remote add origin https://github.com/hayuna/devrelease_heroku
-          git clone https://github.com/hayuna/devrelease_heroku .
+          git remote add origin https://github.com/${{github.repository}}
+          git clone https://github.com/${{github.repository}} .
           git checkout ${{github.head_ref}}
           git pull origin ${{github.head_ref}}
           npm run install:all
           docker-compose down -v
           echo "PORT=100${{github.event.pull_request.number}}" >> "./.env"
           docker-compose up --build -d
+    - name: update-pull-request
+        uses: kt3k/update-pr-description@v1.0.0
+        with:
+            pr_body: ${{ steps.description.outputs.description }} +1
+            github_token: ${{ secrets.GITHUB_TOKEN }}

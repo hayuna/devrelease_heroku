@@ -19,7 +19,7 @@ jobs:
         timeout: 30m
         command_timeout: 60m  
         script: |
-            echo ${{github.event.pull_request.number}}
+            echo ${{format('{{10{0}}}', github.event.pull_request.number)}}
             echo ${{github}} #Object
             echo ${{github.event}} #Object
             echo ${{github.event_path}} #/home/runner/work/_temp/_github_workflow/event.json

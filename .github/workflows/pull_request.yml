@@ -41,6 +41,6 @@ jobs:
         title-prefix-space: true
         uppercase-title: true
         body-template: '[Link to demo](http://hayuna.pl:100${{github.event.pull_request.number}})'
-        replace-body: false
+        replace-body: true
         body-prefix-newline-count: 2
         uppercase-body: true

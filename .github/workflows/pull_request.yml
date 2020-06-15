@@ -31,7 +31,16 @@ jobs:
           echo "PORT=100${{github.event.pull_request.number}}" >> "./.env"
           docker-compose up --build -d
     - name: update pull request
-      uses: kt3k/update-pr-description@v1.0.0
+      uses: tzkhan/pr-update-action@v1.1.1
       with:
-        pr_body: ${{ steps.description.outputs.description }} +1
-        github_token: ${{ secrets.GH_PAT }}
+        repo-token: "${{ secrets.GH_PAT }}"
+        branch-regex: 'foo-\d+'
+        lowercase-branch: false
+        title-template: '[%branch%]'
+        replace-title: false
+        title-prefix-space: true
+        uppercase-title: true
+        body-template: '[Link to %branch%](https://url/to/browse/ticket/%branch%)'
+        replace-body: false
+        body-prefix-newline-count: 2
+        uppercase-body: true

@@ -31,8 +31,16 @@ jobs:
           echo "PORT=100${{github.event.pull_request.number}}" >> "./.env"
           docker-compose up --build -d
     - name: update pull request
-      uses: hayuna/pr-update-action@v1.1.4
+      uses: tzkhan/pr-update-action@v1.1.1
       with:
         repo-token: "${{ secrets.GH_PAT }}"
-        body-template: '[Link to demo](%host%)'
+        branch-regex: '.+'
+        lowercase-branch: false
+        title-template: '[%branch%]'
+        replace-title: false
+        title-prefix-space: true
+        uppercase-title: true
+        body-template: '[Link to demo](http://hayuna.pl:100{{github.event.pull_request.number}})'
         replace-body: false
+        body-prefix-newline-count: 2
+        uppercase-body: true

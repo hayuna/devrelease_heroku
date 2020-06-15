@@ -36,7 +36,7 @@ jobs:
         repo-token: "${{ secrets.GH_PAT }}"
         branch-regex: '.+'
         lowercase-branch: false
-        title-template: '[%branch%]'
+        title-template: ''
         replace-title: false
         title-prefix-space: true
         uppercase-title: true

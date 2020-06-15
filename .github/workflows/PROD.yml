@@ -22,8 +22,8 @@ jobs:
           cd /home/live-sharing/prod
           git remote add origin https://github.com/${{github.repository}}
           git clone https://github.com/${{github.repository}} .
-          git checkout ${{github.head_ref}}
-          git pull origin ${{github.head_ref}}
+          git checkout master
+          git pull origin master
           npm run install:all
           docker-compose down -v
           echo "PORT=80" >> "./.env"

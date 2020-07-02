@@ -5,7 +5,7 @@
         <label for>{{$t("addTool-page.repoSearchLabel")}}</label>
         <input type="text" id="startAnimation" @keyup.enter="searchValidation()" />
         <div class="button-box">
-          <button type="button" class="btn purple" @click=" searchValidation()">
+          <button type="button" class="btn purple" @click=" test()">
             <i class="fas fa-search"></i>
           </button>
           <button type="button" class="btn hit-pink" @click=" clearRepo()">
@@ -41,6 +41,10 @@ export default {
     };
   },
   methods: {
+    test(){
+      const axios = require("axios");
+      axios.get('http://server/').then(a => console.log(a)).catch(a => console.log('error'+a))
+    },
     selectItem(id) {
       if (this.activeItem !== id) {
         this.activeItem = id;

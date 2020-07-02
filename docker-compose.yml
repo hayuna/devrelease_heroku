@@ -7,10 +7,6 @@ services:
     command: node src/server.js
     container_name: api${PORT}
     restart: always
-    volumes:
-      - ./server/src:/app/server/src
-    networks:
-      - network
   client:
     build:
       context: ./client
@@ -23,8 +19,3 @@ services:
     restart: always
     volumes:
       - ./server/logos:/usr/share/nginx/html/logos
-    networks:
-      - network
-networks:
-  network:
-    driver: bridge

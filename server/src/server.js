@@ -13,6 +13,9 @@ connect();
 app.use("/repositories", repositoryRoute);
 app.use("/image", imageRoute);
 app.use("/searchrepo", searchRepoRoute);
+app.get("/", (req, res) => {
+  res.send('result')
+});
 
 if (process.env.NODE_ENV !== "test") {
   app.listen(port, () => console.log(`Listening on port ${port}`));

@@ -43,7 +43,7 @@ export default {
   methods: {
     test(){
       const axios = require("axios");
-      axios.get('http://server/').then(a => console.log(a)).catch(a => console.log('error'+a))
+      axios.get('http://server:4000/').then(a => console.log(a)).catch(a => console.log('error'+a))
     },
     selectItem(id) {
       if (this.activeItem !== id) {

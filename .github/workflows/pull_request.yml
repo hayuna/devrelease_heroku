@@ -38,7 +38,7 @@ jobs:
           replace-title: false
           title-prefix-space: true
           uppercase-title: true
-          body-template: "[Link to demo]({{secrets.SERVER_HOST}}:100${{github.event.pull_request.number}})"
+          body-template: "[Link to demo](${{secrets.SERVER_HOST}}:100${{github.event.pull_request.number}})"
           replace-body: true
           body-prefix-newline-count: 2
           uppercase-body: true

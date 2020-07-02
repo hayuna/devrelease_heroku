@@ -61,7 +61,7 @@ export default {
           } else {
             throw { isValid: false };
           }
-          const result = await axios.get("/api/image", {
+          const result = await axios.get("http://server/image", {
             params: {
               search: input.value
             }
@@ -94,7 +94,7 @@ export default {
           } else {
             throw { isValid: false };
           }
-          const result = await axios.get("/api/searchrepo", {
+          const result = await axios.get("http://server/searchrepo", {
             params: {
               reponame: input.value
             }
